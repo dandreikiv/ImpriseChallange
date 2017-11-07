@@ -10,14 +10,16 @@ import UIKit
 
 class UserProfileCell: UITableViewCell {
 
-    override func awakeFromNib() {
+	static let identifier = String(describing: UserProfileCell.self)
+	
+	@IBOutlet var profileImage: UIImageView!
+	@IBOutlet var profileName: UILabel!
+	
+	override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 }
