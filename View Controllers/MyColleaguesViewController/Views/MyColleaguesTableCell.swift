@@ -22,6 +22,8 @@ class MyColleaguesTableCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 		
+		selectionStyle = .none
+ 
 		avatar.layer.borderWidth = 1.0
 		avatar.layer.cornerRadius = 4.0
     }

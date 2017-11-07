@@ -71,12 +71,14 @@ extension MyColleaguesViewController: UITableViewDelegate {
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		tableView.deselectRow(at: indexPath, animated: true)
+		
+		let userProfileController = UserProfileViewController()
+		navigationController?.pushViewController(userProfileController, animated: true)
 	}
 }
 
 extension MyColleaguesViewController: MyColleaguesTableCellDelegate {
 	func giveFeedback(to user: User) {
-		let userProfileController = UserProfileViewController()
-		navigationController?.pushViewController(userProfileController, animated: true)
+		print("Give feedback to \(user.name)")
 	}
 }

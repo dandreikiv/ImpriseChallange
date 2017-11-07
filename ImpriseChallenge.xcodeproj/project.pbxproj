@@ -21,6 +21,10 @@
 		85DFB3441FB208800060411D /* MyColleaguesTableCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DFB3431FB208800060411D /* MyColleaguesTableCellDelegate.swift */; };
 		85DFB3491FB20E840060411D /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DFB3481FB20E840060411D /* UserProfileViewController.swift */; };
 		85DFB34B1FB2120D0060411D /* DynamicColor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85DFB34A1FB2120D0060411D /* DynamicColor.framework */; };
+		85DFB34F1FB2234D0060411D /* UserProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DFB34D1FB2234D0060411D /* UserProfileCell.swift */; };
+		85DFB3501FB2234D0060411D /* UserProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85DFB34E1FB2234D0060411D /* UserProfileCell.xib */; };
+		85DFB3531FB223740060411D /* FeedbackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DFB3511FB223740060411D /* FeedbackCell.swift */; };
+		85DFB3541FB223740060411D /* FeedbackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85DFB3521FB223740060411D /* FeedbackCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +56,10 @@
 		85DFB3431FB208800060411D /* MyColleaguesTableCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyColleaguesTableCellDelegate.swift; sourceTree = "<group>"; };
 		85DFB3481FB20E840060411D /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		85DFB34A1FB2120D0060411D /* DynamicColor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DynamicColor.framework; path = Carthage/Build/iOS/DynamicColor.framework; sourceTree = "<group>"; };
+		85DFB34D1FB2234D0060411D /* UserProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileCell.swift; sourceTree = "<group>"; };
+		85DFB34E1FB2234D0060411D /* UserProfileCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserProfileCell.xib; sourceTree = "<group>"; };
+		85DFB3511FB223740060411D /* FeedbackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackCell.swift; sourceTree = "<group>"; };
+		85DFB3521FB223740060411D /* FeedbackCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedbackCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,9 +181,21 @@
 		85DFB3471FB20E680060411D /* UserProfileViewController */ = {
 			isa = PBXGroup;
 			children = (
+				85DFB34C1FB223050060411D /* Views */,
 				85DFB3481FB20E840060411D /* UserProfileViewController.swift */,
 			);
 			path = UserProfileViewController;
+			sourceTree = "<group>";
+		};
+		85DFB34C1FB223050060411D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				85DFB34D1FB2234D0060411D /* UserProfileCell.swift */,
+				85DFB34E1FB2234D0060411D /* UserProfileCell.xib */,
+				85DFB3511FB223740060411D /* FeedbackCell.swift */,
+				85DFB3521FB223740060411D /* FeedbackCell.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,10 +281,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85DFB3541FB223740060411D /* FeedbackCell.xib in Resources */,
 				85DFB3421FB1F2610060411D /* MyColleaguesTableCell.xib in Resources */,
 				853BE1B31FB1BF3F00481799 /* users.json in Resources */,
 				853BE19C1FB1BBFF00481799 /* LaunchScreen.storyboard in Resources */,
 				853BE1991FB1BBFF00481799 /* Assets.xcassets in Resources */,
+				85DFB3501FB2234D0060411D /* UserProfileCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +324,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85DFB34F1FB2234D0060411D /* UserProfileCell.swift in Sources */,
+				85DFB3531FB223740060411D /* FeedbackCell.swift in Sources */,
 				85DFB33D1FB1E63B0060411D /* MyColleaguesViewController.swift in Sources */,
 				85DFB3441FB208800060411D /* MyColleaguesTableCellDelegate.swift in Sources */,
 				85DFB3491FB20E840060411D /* UserProfileViewController.swift in Sources */,
