@@ -12,9 +12,11 @@
 		853BE1971FB1BBFF00481799 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 853BE1951FB1BBFF00481799 /* Main.storyboard */; };
 		853BE1991FB1BBFF00481799 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 853BE1981FB1BBFF00481799 /* Assets.xcassets */; };
 		853BE19C1FB1BBFF00481799 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 853BE19A1FB1BBFF00481799 /* LaunchScreen.storyboard */; };
-		853BE1A71FB1BC0000481799 /* ImpriseChellangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853BE1A61FB1BC0000481799 /* ImpriseChellangeTests.swift */; };
+		853BE1A71FB1BC0000481799 /* ImpriseChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853BE1A61FB1BC0000481799 /* ImpriseChallengeTests.swift */; };
 		853BE1B31FB1BF3F00481799 /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = 853BE1B21FB1BF3F00481799 /* users.json */; };
 		853BE1B71FB1C2E400481799 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 853BE1B51FB1C2C300481799 /* SwiftyJSON.framework */; };
+		853BE1BB1FB1C4CF00481799 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853BE1BA1FB1C4CF00481799 /* User.swift */; };
+		853BE1BD1FB1C71600481799 /* DataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853BE1BC1FB1C71600481799 /* DataStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,23 +25,25 @@
 			containerPortal = 853BE1861FB1BBFF00481799 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 853BE18D1FB1BBFF00481799;
-			remoteInfo = ImpriseChellange;
+			remoteInfo = ImpriseChallenge;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		853BE18E1FB1BBFF00481799 /* ImpriseChellange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImpriseChellange.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		853BE18E1FB1BBFF00481799 /* ImpriseChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImpriseChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		853BE1911FB1BBFF00481799 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		853BE1931FB1BBFF00481799 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		853BE1961FB1BBFF00481799 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		853BE1981FB1BBFF00481799 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		853BE19B1FB1BBFF00481799 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		853BE19D1FB1BBFF00481799 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		853BE1A21FB1BC0000481799 /* ImpriseChellangeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImpriseChellangeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		853BE1A61FB1BC0000481799 /* ImpriseChellangeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpriseChellangeTests.swift; sourceTree = "<group>"; };
+		853BE1A21FB1BC0000481799 /* ImpriseChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImpriseChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		853BE1A61FB1BC0000481799 /* ImpriseChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpriseChallengeTests.swift; sourceTree = "<group>"; };
 		853BE1A81FB1BC0000481799 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		853BE1B21FB1BF3F00481799 /* users.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = users.json; sourceTree = "<group>"; };
 		853BE1B51FB1C2C300481799 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		853BE1BA1FB1C4CF00481799 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		853BE1BC1FB1C71600481799 /* DataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,8 +68,9 @@
 		853BE1851FB1BBFF00481799 = {
 			isa = PBXGroup;
 			children = (
-				853BE1901FB1BBFF00481799 /* ImpriseChellange */,
-				853BE1A51FB1BC0000481799 /* ImpriseChellangeTests */,
+				853BE1B91FB1C4BB00481799 /* Model */,
+				853BE1901FB1BBFF00481799 /* ImpriseChallenge */,
+				853BE1A51FB1BC0000481799 /* ImpriseChallengeTests */,
 				853BE1B11FB1BC0C00481799 /* Supporting Files */,
 				853BE18F1FB1BBFF00481799 /* Products */,
 				853BE1B41FB1C2C300481799 /* Frameworks */,
@@ -75,13 +80,13 @@
 		853BE18F1FB1BBFF00481799 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				853BE18E1FB1BBFF00481799 /* ImpriseChellange.app */,
-				853BE1A21FB1BC0000481799 /* ImpriseChellangeTests.xctest */,
+				853BE18E1FB1BBFF00481799 /* ImpriseChallenge.app */,
+				853BE1A21FB1BC0000481799 /* ImpriseChallengeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		853BE1901FB1BBFF00481799 /* ImpriseChellange */ = {
+		853BE1901FB1BBFF00481799 /* ImpriseChallenge */ = {
 			isa = PBXGroup;
 			children = (
 				853BE1911FB1BBFF00481799 /* AppDelegate.swift */,
@@ -91,16 +96,16 @@
 				853BE19A1FB1BBFF00481799 /* LaunchScreen.storyboard */,
 				853BE19D1FB1BBFF00481799 /* Info.plist */,
 			);
-			path = ImpriseChellange;
+			path = ImpriseChallenge;
 			sourceTree = "<group>";
 		};
-		853BE1A51FB1BC0000481799 /* ImpriseChellangeTests */ = {
+		853BE1A51FB1BC0000481799 /* ImpriseChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
-				853BE1A61FB1BC0000481799 /* ImpriseChellangeTests.swift */,
+				853BE1A61FB1BC0000481799 /* ImpriseChallengeTests.swift */,
 				853BE1A81FB1BC0000481799 /* Info.plist */,
 			);
-			path = ImpriseChellangeTests;
+			path = ImpriseChallengeTests;
 			sourceTree = "<group>";
 		};
 		853BE1B11FB1BC0C00481799 /* Supporting Files */ = {
@@ -119,12 +124,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		853BE1B91FB1C4BB00481799 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				853BE1BA1FB1C4CF00481799 /* User.swift */,
+				853BE1BC1FB1C71600481799 /* DataStorage.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		853BE18D1FB1BBFF00481799 /* ImpriseChellange */ = {
+		853BE18D1FB1BBFF00481799 /* ImpriseChallenge */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 853BE1AB1FB1BC0000481799 /* Build configuration list for PBXNativeTarget "ImpriseChellange" */;
+			buildConfigurationList = 853BE1AB1FB1BC0000481799 /* Build configuration list for PBXNativeTarget "ImpriseChallenge" */;
 			buildPhases = (
 				853BE18A1FB1BBFF00481799 /* Sources */,
 				853BE18B1FB1BBFF00481799 /* Frameworks */,
@@ -135,14 +149,14 @@
 			);
 			dependencies = (
 			);
-			name = ImpriseChellange;
-			productName = ImpriseChellange;
-			productReference = 853BE18E1FB1BBFF00481799 /* ImpriseChellange.app */;
+			name = ImpriseChallenge;
+			productName = ImpriseChallenge;
+			productReference = 853BE18E1FB1BBFF00481799 /* ImpriseChallenge.app */;
 			productType = "com.apple.product-type.application";
 		};
-		853BE1A11FB1BC0000481799 /* ImpriseChellangeTests */ = {
+		853BE1A11FB1BC0000481799 /* ImpriseChallengeTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 853BE1AE1FB1BC0000481799 /* Build configuration list for PBXNativeTarget "ImpriseChellangeTests" */;
+			buildConfigurationList = 853BE1AE1FB1BC0000481799 /* Build configuration list for PBXNativeTarget "ImpriseChallengeTests" */;
 			buildPhases = (
 				853BE19E1FB1BC0000481799 /* Sources */,
 				853BE19F1FB1BC0000481799 /* Frameworks */,
@@ -153,9 +167,9 @@
 			dependencies = (
 				853BE1A41FB1BC0000481799 /* PBXTargetDependency */,
 			);
-			name = ImpriseChellangeTests;
-			productName = ImpriseChellangeTests;
-			productReference = 853BE1A21FB1BC0000481799 /* ImpriseChellangeTests.xctest */;
+			name = ImpriseChallengeTests;
+			productName = ImpriseChallengeTests;
+			productReference = 853BE1A21FB1BC0000481799 /* ImpriseChallengeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -178,7 +192,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 853BE1891FB1BBFF00481799 /* Build configuration list for PBXProject "ImpriseChellange" */;
+			buildConfigurationList = 853BE1891FB1BBFF00481799 /* Build configuration list for PBXProject "ImpriseChallenge" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -191,8 +205,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				853BE18D1FB1BBFF00481799 /* ImpriseChellange */,
-				853BE1A11FB1BC0000481799 /* ImpriseChellangeTests */,
+				853BE18D1FB1BBFF00481799 /* ImpriseChallenge */,
+				853BE1A11FB1BC0000481799 /* ImpriseChallengeTests */,
 			);
 		};
 /* End PBXProject section */
@@ -243,6 +257,8 @@
 			files = (
 				853BE1941FB1BBFF00481799 /* ViewController.swift in Sources */,
 				853BE1921FB1BBFF00481799 /* AppDelegate.swift in Sources */,
+				853BE1BB1FB1C4CF00481799 /* User.swift in Sources */,
+				853BE1BD1FB1C71600481799 /* DataStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,7 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				853BE1A71FB1BC0000481799 /* ImpriseChellangeTests.swift in Sources */,
+				853BE1A71FB1BC0000481799 /* ImpriseChallengeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,7 +275,7 @@
 /* Begin PBXTargetDependency section */
 		853BE1A41FB1BC0000481799 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 853BE18D1FB1BBFF00481799 /* ImpriseChellange */;
+			target = 853BE18D1FB1BBFF00481799 /* ImpriseChallenge */;
 			targetProxy = 853BE1A31FB1BC0000481799 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -331,7 +347,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -381,7 +397,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -398,10 +414,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = ImpriseChellange/Info.plist;
+				INFOPLIST_FILE = ImpriseChallenge/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dmytro.andreikiv.ImpriseChellange;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dmytro.andreikiv.ImpriseChallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -418,10 +434,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = ImpriseChellange/Info.plist;
+				INFOPLIST_FILE = ImpriseChallenge/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dmytro.andreikiv.ImpriseChellange;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dmytro.andreikiv.ImpriseChallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -436,13 +452,13 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7N34RARQJ8;
-				INFOPLIST_FILE = ImpriseChellangeTests/Info.plist;
+				INFOPLIST_FILE = ImpriseChallengeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dmytro.andreikiv.ImpriseChellangeTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dmytro.andreikiv.ImpriseChallengeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ImpriseChellange.app/ImpriseChellange";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ImpriseChallenge.app/ImpriseChallenge";
 			};
 			name = Debug;
 		};
@@ -453,20 +469,20 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7N34RARQJ8;
-				INFOPLIST_FILE = ImpriseChellangeTests/Info.plist;
+				INFOPLIST_FILE = ImpriseChallengeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dmytro.andreikiv.ImpriseChellangeTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dmytro.andreikiv.ImpriseChallengeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ImpriseChellange.app/ImpriseChellange";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ImpriseChallenge.app/ImpriseChallenge";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		853BE1891FB1BBFF00481799 /* Build configuration list for PBXProject "ImpriseChellange" */ = {
+		853BE1891FB1BBFF00481799 /* Build configuration list for PBXProject "ImpriseChallenge" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				853BE1A91FB1BC0000481799 /* Debug */,
@@ -475,7 +491,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		853BE1AB1FB1BC0000481799 /* Build configuration list for PBXNativeTarget "ImpriseChellange" */ = {
+		853BE1AB1FB1BC0000481799 /* Build configuration list for PBXNativeTarget "ImpriseChallenge" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				853BE1AC1FB1BC0000481799 /* Debug */,
@@ -484,7 +500,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		853BE1AE1FB1BC0000481799 /* Build configuration list for PBXNativeTarget "ImpriseChellangeTests" */ = {
+		853BE1AE1FB1BC0000481799 /* Build configuration list for PBXNativeTarget "ImpriseChallengeTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				853BE1AF1FB1BC0000481799 /* Debug */,
