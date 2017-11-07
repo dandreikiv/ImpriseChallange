@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DynamicColor
 
 class MyColleaguesViewController: UIViewController {
 
@@ -24,6 +25,9 @@ class MyColleaguesViewController: UIViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
+		
+		title = "Imprise"
+		
 		tableView.dataSource = self
 		tableView.delegate = self
 		tableView.rowHeight = 95.0
@@ -37,6 +41,9 @@ class MyColleaguesViewController: UIViewController {
 		tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
 		
 		view.backgroundColor = UIColor.white
+		
+		navigationController?.navigationBar.barTintColor = UIColor.yellow.mixed(withColor: DynamicColor.red)
+		
     }
 }
 
@@ -68,6 +75,7 @@ extension MyColleaguesViewController: UITableViewDelegate {
 
 extension MyColleaguesViewController: MyColleaguesTableCellDelegate {
 	func presentProfile(of user: User) {
-		
+		let userProfileController = UserProfileViewController()
+		navigationController?.pushViewController(userProfileController, animated: true)
 	}
 }

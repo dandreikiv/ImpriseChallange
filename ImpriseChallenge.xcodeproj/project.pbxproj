@@ -20,6 +20,7 @@
 		85DFB3421FB1F2610060411D /* MyColleaguesTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85DFB3401FB1F2610060411D /* MyColleaguesTableCell.xib */; };
 		85DFB3441FB208800060411D /* MyColleaguesTableCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DFB3431FB208800060411D /* MyColleaguesTableCellDelegate.swift */; };
 		85DFB3491FB20E840060411D /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DFB3481FB20E840060411D /* UserProfileViewController.swift */; };
+		85DFB34B1FB2120D0060411D /* DynamicColor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85DFB34A1FB2120D0060411D /* DynamicColor.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		85DFB3401FB1F2610060411D /* MyColleaguesTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyColleaguesTableCell.xib; sourceTree = "<group>"; };
 		85DFB3431FB208800060411D /* MyColleaguesTableCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyColleaguesTableCellDelegate.swift; sourceTree = "<group>"; };
 		85DFB3481FB20E840060411D /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
+		85DFB34A1FB2120D0060411D /* DynamicColor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DynamicColor.framework; path = Carthage/Build/iOS/DynamicColor.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				853BE1B71FB1C2E400481799 /* SwiftyJSON.framework in Frameworks */,
+				85DFB34B1FB2120D0060411D /* DynamicColor.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,6 +127,7 @@
 		853BE1B41FB1C2C300481799 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				85DFB34A1FB2120D0060411D /* DynamicColor.framework */,
 				853BE1B51FB1C2C300481799 /* SwiftyJSON.framework */,
 			);
 			name = Frameworks;
@@ -141,8 +145,8 @@
 		85DFB33E1FB1F2160060411D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				85DFB33F1FB1F2610060411D /* MyColleaguesTableCell.swift */,
 				85DFB3431FB208800060411D /* MyColleaguesTableCellDelegate.swift */,
+				85DFB33F1FB1F2610060411D /* MyColleaguesTableCell.swift */,
 				85DFB3401FB1F2610060411D /* MyColleaguesTableCell.xib */,
 			);
 			path = Views;
@@ -281,9 +285,11 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/DynamicColor.framework",
 			);
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SwiftyJSON.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/DynamicColor.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

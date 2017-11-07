@@ -16,6 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 		window = UIWindow(frame: UIScreen.main.bounds)
 
+		configureUI()
+		
 		let controller = MyColleaguesViewController(dataStorage: DataStorage())
 		let navController = UINavigationController(rootViewController: controller)
 		
@@ -24,6 +26,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		window?.makeKeyAndVisible()
 		// Override point for customization after application launch.
 		return true
+	}
+	
+	private func configureUI() {
+		let titleFontSize: CGFloat = 24
+		
+		UINavigationBar.appearance().tintColor = UIColor.white
+		UINavigationBar.appearance().titleTextAttributes = [
+			NSAttributedStringKey.foregroundColor: UIColor.white,
+			NSAttributedStringKey.font: UIFont(name: "HelveticaNeue-Medium", size: titleFontSize) ?? UIFont.systemFont(ofSize: titleFontSize)
+		]
 	}
 }
 
