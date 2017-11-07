@@ -25,13 +25,14 @@ class MyColleaguesViewController: UIViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-		
-		title = "Imprise"
+
+		title = NSLocalizedString("Imprise", comment: "Imprise title")
 		
 		tableView.dataSource = self
 		tableView.delegate = self
 		tableView.rowHeight = 95.0
-		tableView.register(UINib(nibName: "MyColleaguesTableCell", bundle: Bundle.main), forCellReuseIdentifier: MyColleaguesTableCell.identifier)
+		tableView.register(UINib(nibName: String(describing: MyColleaguesTableCell.self), bundle: Bundle.main),
+						   forCellReuseIdentifier: MyColleaguesTableCell.identifier)
 		view.addSubview(tableView)
 		
 		tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -74,7 +75,7 @@ extension MyColleaguesViewController: UITableViewDelegate {
 }
 
 extension MyColleaguesViewController: MyColleaguesTableCellDelegate {
-	func presentProfile(of user: User) {
+	func giveFeedback(to user: User) {
 		let userProfileController = UserProfileViewController()
 		navigationController?.pushViewController(userProfileController, animated: true)
 	}

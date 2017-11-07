@@ -155,8 +155,8 @@
 		85DFB3451FB20E080060411D /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				85DFB3471FB20E680060411D /* UserProfileViewController */,
 				85DFB3461FB20E1E0060411D /* MyColleaguesViewController */,
+				85DFB3471FB20E680060411D /* UserProfileViewController */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";

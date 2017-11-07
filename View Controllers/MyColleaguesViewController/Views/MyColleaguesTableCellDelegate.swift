@@ -9,5 +9,5 @@
 import Foundation
 
 protocol MyColleaguesTableCellDelegate: class {
-	func presentProfile(of user: User)
+	func giveFeedback(to user: User)
 }

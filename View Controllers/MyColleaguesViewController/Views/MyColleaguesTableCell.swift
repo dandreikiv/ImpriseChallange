@@ -39,7 +39,7 @@ class MyColleaguesTableCell: UITableViewCell {
     
 	@IBAction func giveFeedbackPressed(_ sender: Any) {
 		if let user = user {
-			delegate?.presentProfile(of: user)
+			delegate?.giveFeedback(to: user)
 		}
 	}
 }
