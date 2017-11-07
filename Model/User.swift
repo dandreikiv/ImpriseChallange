@@ -14,6 +14,14 @@ struct User {
 	var email: String
 	var avatar: String
 	var lastInteractions: [User: [Date]]?
+	
+	init(id: Int, name: String, email: String, avatar: String, lastInteractions: [User: [Date]]? = nil) {
+		self.id = id
+		self.name = name
+		self.email = email
+		self.avatar = avatar
+		self.lastInteractions = lastInteractions
+	}
 }
 
 extension User: Hashable {
