@@ -16,6 +16,9 @@ class MyColleaguesTableCell: UITableViewCell {
 	
 	static let identifier = String(describing: MyColleaguesTableCell.self)
 	
+	weak var delegate: MyColleaguesTableCellDelegate?
+	var user: User?
+	
     override func awakeFromNib() {
         super.awakeFromNib()
 		
@@ -28,7 +31,15 @@ class MyColleaguesTableCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+	
+	func updateWith(_ user: User) {
+		self.user = user
+		userName.text = user.name
+	}
     
 	@IBAction func giveFeedbackPressed(_ sender: Any) {
+		if let user = user {
+			delegate?.presentProfile(of: user)
+		}
 	}
 }

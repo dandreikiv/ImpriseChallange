@@ -25,6 +25,7 @@ class MyColleaguesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		tableView.dataSource = self
+		tableView.delegate = self
 		tableView.rowHeight = 95.0
 		tableView.register(UINib(nibName: "MyColleaguesTableCell", bundle: Bundle.main), forCellReuseIdentifier: MyColleaguesTableCell.identifier)
 		view.addSubview(tableView)
@@ -47,5 +48,26 @@ extension MyColleaguesViewController: UITableViewDataSource {
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		return tableView.dequeueReusableCell(withIdentifier: MyColleaguesTableCell.identifier, for: indexPath)
+	}
+}
+
+extension MyColleaguesViewController: UITableViewDelegate {
+	
+	func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+		if  let user = dataStorage[indexPath.row],
+			let colleaguesCell = cell as? MyColleaguesTableCell {
+			colleaguesCell.updateWith(user)
+			colleaguesCell.delegate = self
+		}
+	}
+	
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		tableView.deselectRow(at: indexPath, animated: true)
+	}
+}
+
+extension MyColleaguesViewController: MyColleaguesTableCellDelegate {
+	func presentProfile(of user: User) {
+		
 	}
 }

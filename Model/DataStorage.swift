@@ -12,6 +12,7 @@ import SwiftyJSON
 protocol DataStorageProtocol: class {
 	var users: [User] { get }
 	var numberOfUsers: Int { get }
+	subscript(index: Int) -> User? { get }
 }
 
 class DataStorage: DataStorageProtocol {
@@ -23,6 +24,15 @@ class DataStorage: DataStorageProtocol {
 	
 	init() {
 		loadUsers()
+	}
+	
+	subscript(index: Int) -> User? {
+		get {
+			if index < users.count {
+				return users[index]
+			}
+			return nil
+		}
 	}
 	
 	// MARK: Private functions
