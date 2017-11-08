@@ -73,9 +73,12 @@ class DataStorage: DataStorageProtocol {
 			return
 		}
 		
+		guard let json = try? JSON(data: jsonData) else {
+			return
+		}
+		
 		users.removeAll()
 		
-		let json = JSON(data: jsonData)
 		for userJSON in json["users"].arrayValue {
 			
 			let id = userJSON["id"].intValue
