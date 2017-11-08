@@ -150,6 +150,7 @@ class ImpriseChellangeTests: XCTestCase {
 					
 					return [user1, user2]
 				}
+				set {}
 			}
 		}
 		
