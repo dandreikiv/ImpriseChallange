@@ -53,4 +53,12 @@ extension Date {
 			return NSLocalizedString("You haven't given a feedback yet", comment: "Feedback not given placeholder")
 		}
 	}
+	
+	func components(components: Set<Calendar.Component>, to date: Date) -> DateComponents {
+		return Calendar.current.dateComponents(components, from: self, to: date)
+	}
+	
+	func date(byAdding components: DateComponents) -> Date? {
+		return Calendar.current.date(byAdding: components, to: self)
+	}
 }
