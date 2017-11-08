@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct User {
+class User {
 	var id: Int
 	var name: String
 	var email: String
@@ -22,11 +22,15 @@ struct User {
 		self.avatar = avatar
 		self.lastInteractions = lastInteractions
 	}
+	
+	func addInteraction(date: Date) {
+		lastInteractions?.append(date)
+	}
 }
 
 extension User: Hashable {
 	static func ==(lhs: User, rhs: User) -> Bool {
-		return lhs.id == rhs.id
+		return lhs.id == rhs.id && lhs.hashValue == rhs.hashValue
 	}
 	
 	var hashValue: Int {
@@ -50,6 +54,8 @@ extension User {
 	}
 	
 	var hasRecentFeedback: Bool {
+		
+		// There is no recent feedback if the lastInteractions array is empty.
 		guard let interaction = lastInteractions?.sorted(by: {$0 > $1}).first else {
 			return false
 		}
