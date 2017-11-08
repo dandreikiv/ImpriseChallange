@@ -106,13 +106,17 @@ extension UserProfileViewController: UITableViewDelegate {
 		if section == UserProfileTable.ImageSection {
 			return nil
 		}
+		
 		let reusableView = tableView.dequeueReusableHeaderFooterView(withIdentifier: TableSectionsView.identifier)
-		if let header = reusableView as? TableSectionsView {
-			let headerTitle = NSLocalizedString("Feedback given to ", comment: "Feedback section title")
-			let userName = user.firstName ?? NSLocalizedString("User", comment: "User name placeholder")
-			header.setTitle(text: headerTitle + userName + ":")
+		guard let header = reusableView as? TableSectionsView else {
+			return nil
 		}
-		return reusableView
+		
+		let headerTitle = NSLocalizedString("Feedback given to ", comment: "Feedback section title")
+		let userName = user.firstName ?? NSLocalizedString("User", comment: "User name placeholder")
+		header.setTitle(text: headerTitle + userName + ":")
+		
+		return header
 	}
 	
 	func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
