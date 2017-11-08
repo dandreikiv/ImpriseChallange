@@ -13,9 +13,9 @@ struct User {
 	var name: String
 	var email: String
 	var avatar: String
-	var lastInteractions: [User: [Date]]?
+	var lastInteractions: [Date]?
 	
-	init(id: Int, name: String, email: String, avatar: String, lastInteractions: [User: [Date]]? = nil) {
+	init(id: Int, name: String, email: String, avatar: String, lastInteractions: [Date]? = nil) {
 		self.id = id
 		self.name = name
 		self.email = email
@@ -33,5 +33,32 @@ extension User: Hashable {
 		get {
 			return id + name.hashValue
 		}
+	}
+}
+
+extension User {
+	var firstName: String? {
+		get {
+			return name.components(separatedBy: CharacterSet.whitespacesAndNewlines).first
+		}
+	}
+	
+	var lastName: String? {
+		get {
+			return name.components(separatedBy: CharacterSet.whitespacesAndNewlines).last
+		}
+	}
+	
+	var hasRecentFeedback: Bool {
+		guard let interaction = lastInteractions?.sorted(by: {$0 > $1}).first else {
+			return false
+		}
+
+		let components = interaction.components(components: [.weekOfYear], to: Date())
+		guard let numberOfWeesk = components.weekOfYear else {
+			return false
+		}
+		
+		return numberOfWeesk < 2
 	}
 }
