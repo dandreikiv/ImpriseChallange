@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SDWebImage
+import DynamicColor
 
 class MyColleaguesTableCell: UITableViewCell {
 	
@@ -26,6 +28,8 @@ class MyColleaguesTableCell: UITableViewCell {
  
 		avatar.layer.borderWidth = 1.0
 		avatar.layer.cornerRadius = 4.0
+		avatar.layer.masksToBounds = true
+		avatar.layer.borderColor = UIColor.yellow.mixed(withColor: DynamicColor.red).cgColor
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -38,6 +42,16 @@ class MyColleaguesTableCell: UITableViewCell {
 		self.model = model
 		userName.text = model?.user.name
 		lastFeedback.attributedText = model?.lastGivenFeedback
+		
+		guard let avatarPath = model?.user.avatar else {
+			return
+		}
+		
+		guard let url = URL(string: avatarPath) else {
+			return
+		}
+		
+		avatar.sd_setImage(with: url , completed: nil)
 	}
     
 	@IBAction func giveFeedbackPressed(_ sender: Any) {

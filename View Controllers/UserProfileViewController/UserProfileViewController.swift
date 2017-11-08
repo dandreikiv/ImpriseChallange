@@ -86,8 +86,7 @@ extension UserProfileViewController: UITableViewDelegate {
 			guard let imageCell = cell as? UserProfileCell else {
 				return
 			}
-			
-			imageCell.profileName.text = user.name
+			imageCell.update(with: user)
 		}
 		else if indexPath.section == UserProfileTable.FeedbackSection {
 			guard let feedbackCell = cell as? FeedbackCell else {

@@ -15,6 +15,11 @@
 		853BE1B71FB1C2E400481799 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 853BE1B51FB1C2C300481799 /* SwiftyJSON.framework */; };
 		853BE1BB1FB1C4CF00481799 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853BE1BA1FB1C4CF00481799 /* User.swift */; };
 		853BE1BD1FB1C71600481799 /* DataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853BE1BC1FB1C71600481799 /* DataStorage.swift */; };
+		859A276E1FB24CC300D6D5E8 /* TableSectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A276D1FB24CC300D6D5E8 /* TableSectionsView.swift */; };
+		859A27711FB2F31D00D6D5E8 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A27701FB2F31D00D6D5E8 /* DateExtensions.swift */; };
+		859A27741FB2F3CB00D6D5E8 /* MyColleaguesCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A27731FB2F3CB00D6D5E8 /* MyColleaguesCellViewModel.swift */; };
+		859A27751FB338D400D6D5E8 /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = 853BE1B21FB1BF3F00481799 /* users.json */; };
+		85C7E8921FB365E200B94FF8 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85C7E8911FB365E200B94FF8 /* SDWebImage.framework */; };
 		85DFB33D1FB1E63B0060411D /* MyColleaguesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DFB33C1FB1E63B0060411D /* MyColleaguesViewController.swift */; };
 		85DFB3411FB1F2610060411D /* MyColleaguesTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DFB33F1FB1F2610060411D /* MyColleaguesTableCell.swift */; };
 		85DFB3421FB1F2610060411D /* MyColleaguesTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85DFB3401FB1F2610060411D /* MyColleaguesTableCell.xib */; };
@@ -50,6 +55,10 @@
 		853BE1B51FB1C2C300481799 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		853BE1BA1FB1C4CF00481799 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		853BE1BC1FB1C71600481799 /* DataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorage.swift; sourceTree = "<group>"; };
+		859A276D1FB24CC300D6D5E8 /* TableSectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSectionsView.swift; sourceTree = "<group>"; };
+		859A27701FB2F31D00D6D5E8 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
+		859A27731FB2F3CB00D6D5E8 /* MyColleaguesCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyColleaguesCellViewModel.swift; sourceTree = "<group>"; };
+		85C7E8911FB365E200B94FF8 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
 		85DFB33C1FB1E63B0060411D /* MyColleaguesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyColleaguesViewController.swift; sourceTree = "<group>"; };
 		85DFB33F1FB1F2610060411D /* MyColleaguesTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyColleaguesTableCell.swift; sourceTree = "<group>"; };
 		85DFB3401FB1F2610060411D /* MyColleaguesTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyColleaguesTableCell.xib; sourceTree = "<group>"; };
@@ -67,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85C7E8921FB365E200B94FF8 /* SDWebImage.framework in Frameworks */,
 				853BE1B71FB1C2E400481799 /* SwiftyJSON.framework in Frameworks */,
 				85DFB34B1FB2120D0060411D /* DynamicColor.framework in Frameworks */,
 			);
@@ -85,7 +95,9 @@
 		853BE1851FB1BBFF00481799 = {
 			isa = PBXGroup;
 			children = (
+				859A276F1FB2F31000D6D5E8 /* Extensions */,
 				853BE1B91FB1C4BB00481799 /* Model */,
+				859A27761FB3434C00D6D5E8 /* Common */,
 				85DFB3451FB20E080060411D /* View Controllers */,
 				853BE1901FB1BBFF00481799 /* ImpriseChallenge */,
 				853BE1A51FB1BC0000481799 /* ImpriseChallengeTests */,
@@ -135,6 +147,7 @@
 		853BE1B41FB1C2C300481799 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				85C7E8911FB365E200B94FF8 /* SDWebImage.framework */,
 				85DFB34A1FB2120D0060411D /* DynamicColor.framework */,
 				853BE1B51FB1C2C300481799 /* SwiftyJSON.framework */,
 			);
@@ -148,6 +161,38 @@
 				853BE1BC1FB1C71600481799 /* DataStorage.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		859A276F1FB2F31000D6D5E8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				859A27701FB2F31D00D6D5E8 /* DateExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		859A27721FB2F3AE00D6D5E8 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				859A27731FB2F3CB00D6D5E8 /* MyColleaguesCellViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		859A27761FB3434C00D6D5E8 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				859A27771FB3435B00D6D5E8 /* Views */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		859A27771FB3435B00D6D5E8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				859A276D1FB24CC300D6D5E8 /* TableSectionsView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		85DFB33E1FB1F2160060411D /* Views */ = {
@@ -172,6 +217,7 @@
 		85DFB3461FB20E1E0060411D /* MyColleaguesViewController */ = {
 			isa = PBXGroup;
 			children = (
+				859A27721FB2F3AE00D6D5E8 /* View Models */,
 				85DFB33E1FB1F2160060411D /* Views */,
 				85DFB33C1FB1E63B0060411D /* MyColleaguesViewController.swift */,
 			);
@@ -294,6 +340,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				859A27751FB338D400D6D5E8 /* users.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,10 +355,12 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/DynamicColor.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SDWebImage.framework",
 			);
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SwiftyJSON.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/DynamicColor.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -329,7 +378,10 @@
 				85DFB33D1FB1E63B0060411D /* MyColleaguesViewController.swift in Sources */,
 				85DFB3441FB208800060411D /* MyColleaguesTableCellDelegate.swift in Sources */,
 				85DFB3491FB20E840060411D /* UserProfileViewController.swift in Sources */,
+				859A27711FB2F31D00D6D5E8 /* DateExtensions.swift in Sources */,
+				859A276E1FB24CC300D6D5E8 /* TableSectionsView.swift in Sources */,
 				853BE1921FB1BBFF00481799 /* AppDelegate.swift in Sources */,
+				859A27741FB2F3CB00D6D5E8 /* MyColleaguesCellViewModel.swift in Sources */,
 				85DFB3411FB1F2610060411D /* MyColleaguesTableCell.swift in Sources */,
 				853BE1BB1FB1C4CF00481799 /* User.swift in Sources */,
 				853BE1BD1FB1C71600481799 /* DataStorage.swift in Sources */,
