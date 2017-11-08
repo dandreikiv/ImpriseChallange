@@ -46,7 +46,7 @@ extension Date {
 			}
 			
 			let seconds = components.second ?? 0
-			if seconds > 0 {
+			if seconds >= 0 {
 				return NSLocalizedString("Just now", comment: "Just now format")
 			}
 			
