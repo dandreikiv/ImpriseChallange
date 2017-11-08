@@ -17,7 +17,7 @@ class MyColleaguesTableCell: UITableViewCell {
 	static let identifier = String(describing: MyColleaguesTableCell.self)
 	
 	weak var delegate: MyColleaguesTableCellDelegate?
-	var user: User?
+	var model: MyColleaguesCellViewModel?
 	
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,13 +34,14 @@ class MyColleaguesTableCell: UITableViewCell {
         // Configure the view for the selected state
     }
 	
-	func updateWith(_ user: User) {
-		self.user = user
-		userName.text = user.name
+	func updateWith(_ model: MyColleaguesCellViewModel?) {
+		self.model = model
+		userName.text = model?.user.name
+		lastFeedback.attributedText = model?.lastGivenFeedback
 	}
     
 	@IBAction func giveFeedbackPressed(_ sender: Any) {
-		if let user = user {
+		if let user = model?.user {
 			delegate?.giveFeedback(to: user)
 		}
 	}
