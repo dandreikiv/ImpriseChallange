@@ -15,6 +15,10 @@
 		853BE1B71FB1C2E400481799 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 853BE1B51FB1C2C300481799 /* SwiftyJSON.framework */; };
 		853BE1BB1FB1C4CF00481799 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853BE1BA1FB1C4CF00481799 /* User.swift */; };
 		853BE1BD1FB1C71600481799 /* DataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853BE1BC1FB1C71600481799 /* DataStorage.swift */; };
+		8598B5961FB46AAA005C1E82 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8598B5951FB46AAA005C1E82 /* ColorExtensions.swift */; };
+		8598B5991FB47063005C1E82 /* FeedbackCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8598B5981FB47063005C1E82 /* FeedbackCellModel.swift */; };
+		8598B59D1FB47447005C1E82 /* NoFeedbackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8598B59B1FB47447005C1E82 /* NoFeedbackCell.swift */; };
+		8598B59E1FB47447005C1E82 /* NoFeedbackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8598B59C1FB47447005C1E82 /* NoFeedbackCell.xib */; };
 		859A276E1FB24CC300D6D5E8 /* TableSectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A276D1FB24CC300D6D5E8 /* TableSectionsView.swift */; };
 		859A27711FB2F31D00D6D5E8 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A27701FB2F31D00D6D5E8 /* DateExtensions.swift */; };
 		859A27741FB2F3CB00D6D5E8 /* MyColleaguesCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A27731FB2F3CB00D6D5E8 /* MyColleaguesCellViewModel.swift */; };
@@ -55,6 +59,10 @@
 		853BE1B51FB1C2C300481799 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		853BE1BA1FB1C4CF00481799 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		853BE1BC1FB1C71600481799 /* DataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorage.swift; sourceTree = "<group>"; };
+		8598B5951FB46AAA005C1E82 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
+		8598B5981FB47063005C1E82 /* FeedbackCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackCellModel.swift; sourceTree = "<group>"; };
+		8598B59B1FB47447005C1E82 /* NoFeedbackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoFeedbackCell.swift; sourceTree = "<group>"; };
+		8598B59C1FB47447005C1E82 /* NoFeedbackCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoFeedbackCell.xib; sourceTree = "<group>"; };
 		859A276D1FB24CC300D6D5E8 /* TableSectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSectionsView.swift; sourceTree = "<group>"; };
 		859A27701FB2F31D00D6D5E8 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		859A27731FB2F3CB00D6D5E8 /* MyColleaguesCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyColleaguesCellViewModel.swift; sourceTree = "<group>"; };
@@ -163,10 +171,19 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		8598B59A1FB4708B005C1E82 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				8598B5981FB47063005C1E82 /* FeedbackCellModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
 		859A276F1FB2F31000D6D5E8 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				859A27701FB2F31D00D6D5E8 /* DateExtensions.swift */,
+				8598B5951FB46AAA005C1E82 /* ColorExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -227,6 +244,7 @@
 		85DFB3471FB20E680060411D /* UserProfileViewController */ = {
 			isa = PBXGroup;
 			children = (
+				8598B59A1FB4708B005C1E82 /* View Models */,
 				85DFB34C1FB223050060411D /* Views */,
 				85DFB3481FB20E840060411D /* UserProfileViewController.swift */,
 			);
@@ -240,6 +258,8 @@
 				85DFB34E1FB2234D0060411D /* UserProfileCell.xib */,
 				85DFB3511FB223740060411D /* FeedbackCell.swift */,
 				85DFB3521FB223740060411D /* FeedbackCell.xib */,
+				8598B59B1FB47447005C1E82 /* NoFeedbackCell.swift */,
+				8598B59C1FB47447005C1E82 /* NoFeedbackCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -331,6 +351,7 @@
 				85DFB3421FB1F2610060411D /* MyColleaguesTableCell.xib in Resources */,
 				853BE1B31FB1BF3F00481799 /* users.json in Resources */,
 				853BE19C1FB1BBFF00481799 /* LaunchScreen.storyboard in Resources */,
+				8598B59E1FB47447005C1E82 /* NoFeedbackCell.xib in Resources */,
 				853BE1991FB1BBFF00481799 /* Assets.xcassets in Resources */,
 				85DFB3501FB2234D0060411D /* UserProfileCell.xib in Resources */,
 			);
@@ -374,6 +395,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				85DFB34F1FB2234D0060411D /* UserProfileCell.swift in Sources */,
+				8598B59D1FB47447005C1E82 /* NoFeedbackCell.swift in Sources */,
+				8598B5961FB46AAA005C1E82 /* ColorExtensions.swift in Sources */,
 				85DFB3531FB223740060411D /* FeedbackCell.swift in Sources */,
 				85DFB33D1FB1E63B0060411D /* MyColleaguesViewController.swift in Sources */,
 				85DFB3441FB208800060411D /* MyColleaguesTableCellDelegate.swift in Sources */,
@@ -382,6 +405,7 @@
 				859A276E1FB24CC300D6D5E8 /* TableSectionsView.swift in Sources */,
 				853BE1921FB1BBFF00481799 /* AppDelegate.swift in Sources */,
 				859A27741FB2F3CB00D6D5E8 /* MyColleaguesCellViewModel.swift in Sources */,
+				8598B5991FB47063005C1E82 /* FeedbackCellModel.swift in Sources */,
 				85DFB3411FB1F2610060411D /* MyColleaguesTableCell.swift in Sources */,
 				853BE1BB1FB1C4CF00481799 /* User.swift in Sources */,
 				853BE1BD1FB1C71600481799 /* DataStorage.swift in Sources */,

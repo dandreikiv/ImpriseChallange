@@ -15,6 +15,13 @@ class UserProfileViewController: UIViewController {
 		static let FeedbackSection: Int = 1
 	}
 	
+	struct TableViewDimensions {
+		static let ImageCellHeight: CGFloat = 130.0
+		static let FeedbackCellHeight: CGFloat = 40.0
+		static let NoFeedbackCellHeight: CGFloat = 130
+		static let SectionHeaderHeight: CGFloat = 34
+	}
+	
 	private let user: User
 	private let feedbackInteractions: [Date]
 	private let tableView = UITableView()
@@ -53,6 +60,9 @@ class UserProfileViewController: UIViewController {
 		let feedbackCellNib = UINib(nibName: String(describing: FeedbackCell.self), bundle: Bundle.main)
 		tableView.register(feedbackCellNib, forCellReuseIdentifier: FeedbackCell.identifier)
 		
+		let noFeedbackCellNib = UINib(nibName: String(describing: NoFeedbackCell.self), bundle: Bundle.main)
+		tableView.register(noFeedbackCellNib, forCellReuseIdentifier: NoFeedbackCell.identifier)
+		
 		// Register reusable view.
 		tableView.register(TableSectionsView.self, forHeaderFooterViewReuseIdentifier: TableSectionsView.identifier)
     }
@@ -70,16 +80,32 @@ extension UserProfileViewController: UITableViewDataSource {
 			return 1
 		}
 		
-		return self.user.lastInteractions?.count ?? 0
+		guard let count = self.user.lastInteractions?.count else {
+			return 1
+		}
+		
+		return count == 0 ? 1 : count
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let identifier = sectionCellIdentifiers[indexPath.section]
-		return tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
+		
+		if indexPath.section == UserProfileTable.ImageSection {
+			return tableView.dequeueReusableCell(withIdentifier: UserProfileCell.identifier, for: indexPath)
+		}
+		
+		if let interactions = self.user.lastInteractions, interactions.count > 0 {
+			return tableView.dequeueReusableCell(withIdentifier: FeedbackCell.identifier, for: indexPath)
+		}
+		
+		return tableView.dequeueReusableCell(withIdentifier: NoFeedbackCell.identifier, for: indexPath)
 	}
 }
 
 extension UserProfileViewController: UITableViewDelegate {
+	
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		tableView.deselectRow(at: indexPath, animated: true)
+	}
 	
 	func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
 		if indexPath.section == UserProfileTable.ImageSection {
@@ -97,7 +123,7 @@ extension UserProfileViewController: UITableViewDelegate {
 				return
 			}
 			
-			feedbackCell.setFeedback(text: feedbackInteraction.timeFromNow)
+			feedbackCell.setFeedback(model: FeedbackCellModel(date: feedbackInteraction))
 		}
 	}
 	
@@ -122,13 +148,15 @@ extension UserProfileViewController: UITableViewDelegate {
 		if section == UserProfileTable.ImageSection {
 			return 0.0
 		}
-		return 34.0
+		return TableViewDimensions.SectionHeaderHeight
 	}
 	
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 		if indexPath.section == UserProfileTable.ImageSection {
-			return 130.0
+			return TableViewDimensions.ImageCellHeight
 		}
-		return 40.0
+		
+		let interactionsCount = self.user.lastInteractions?.count ?? 0
+		return interactionsCount == 0 ? TableViewDimensions.NoFeedbackCellHeight : TableViewDimensions.FeedbackCellHeight
 	}
 }

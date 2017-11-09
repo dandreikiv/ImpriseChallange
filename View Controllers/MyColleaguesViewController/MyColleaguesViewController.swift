@@ -31,7 +31,7 @@ class MyColleaguesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		view.backgroundColor = UIColor.white
-		navigationController?.navigationBar.barTintColor = UIColor.yellow.mixed(withColor: DynamicColor.red)
+		navigationController?.navigationBar.barTintColor = UIColor.impriseColor
 		
 		title = NSLocalizedString("Imprise", comment: "Imprise title")
 		
@@ -55,6 +55,11 @@ class MyColleaguesViewController: UIViewController {
 		// Add reset button
 		self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(resetDataStorage))
     }
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		tableView.reloadData()
+	}
 	
 	@objc private func resetDataStorage() {
 		dataStorage.reset()

@@ -8,7 +8,6 @@
 
 import UIKit
 import SDWebImage
-import DynamicColor
 
 class UserProfileCell: UITableViewCell {
 
@@ -23,7 +22,7 @@ class UserProfileCell: UITableViewCell {
 		profileImage.layer.borderWidth = 1
 		profileImage.layer.cornerRadius = 4
 		profileImage.layer.masksToBounds = true
-		profileImage.layer.borderColor = UIColor.yellow.mixed(withColor: DynamicColor.red).cgColor
+		profileImage.layer.borderColor = UIColor.impriseColor.cgColor
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -33,6 +32,7 @@ class UserProfileCell: UITableViewCell {
 	func update(with user: User) {
 		
 		profileName.text = user.name
+		profileImage.image = UIImage(named: "user_placeholder")
 		
 		guard let url = URL(string: user.avatar) else {
 			return

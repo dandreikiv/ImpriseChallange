@@ -22,7 +22,7 @@ class FeedbackCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
 	
-	func setFeedback(text: String) {
-		feedbackLabel.text = NSLocalizedString("Feedbeck sent: ", comment: "Feedback sent time format") + text
+	func setFeedback(model: FeedbackCellModel) {
+		feedbackLabel.attributedText = model.attributedString
 	}
 }

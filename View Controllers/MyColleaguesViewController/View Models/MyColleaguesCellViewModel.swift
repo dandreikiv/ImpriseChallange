@@ -13,7 +13,7 @@ class MyColleaguesCellViewModel {
 	
 	var firstName: String?
 	var lastName: String?
-	var lastGivenFeedback: NSAttributedString
+	var lastGivenFeedback: NSAttributedString?
 	
 	let user: User
 	
@@ -23,21 +23,27 @@ class MyColleaguesCellViewModel {
 		firstName = self.user.firstName
 		lastName = self.user.lastName
 		
-		guard let lastFeedbackDateString = self.user.lastInteractions?.first?.timeFromNow.lowercased() else {
-			let noFeedbackYet = NSLocalizedString("You haven't given feedback yet", comment: "Haven't given feedback placeholder")
-			lastGivenFeedback = NSAttributedString(string: noFeedbackYet)
-			return
+		let timeDifference = self.user.lastInteractions?.first?.timeDifference ?? .undefined
+		
+		switch timeDifference {
+		case .undefined:
+			lastGivenFeedback = NSAttributedString(string: timeDifference.stringValue())
+			
+		default:
+			let timeString = timeDifference.stringValue().lowercased()
+			
+			let format = NSLocalizedString("Last feedback you sent: %@", comment: "Last feedback placeholder")
+			let feedback = String(format: format, timeString)
+			
+			let range = feedback.range(of: timeString)
+			let feedbackAttributedString = NSMutableAttributedString(string: feedback)
+			
+			feedbackAttributedString.setAttributes(
+				[NSAttributedStringKey.foregroundColor: timeDifference.colorValue()],
+				range: NSRange(range!, in: feedback)
+			)
+			
+			lastGivenFeedback = feedbackAttributedString
 		}
-		
-		let lastFeedbackFormat = NSLocalizedString("Last feedback you sent: %@", comment: "Last feedback placeholder")
-		let feedbackString = String(format: lastFeedbackFormat, lastFeedbackDateString)
-		
-		let range = feedbackString.range(of: lastFeedbackDateString)
-		let mutableFeedbackString = NSMutableAttributedString(string: feedbackString)
-		
-		mutableFeedbackString.setAttributes(
-			[NSAttributedStringKey.foregroundColor: UIColor.red], range: NSRange(range!, in: feedbackString))
-
-		lastGivenFeedback = mutableFeedbackString
 	}
 }

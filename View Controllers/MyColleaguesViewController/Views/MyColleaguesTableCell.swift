@@ -8,7 +8,6 @@
 
 import UIKit
 import SDWebImage
-import DynamicColor
 
 class MyColleaguesTableCell: UITableViewCell {
 	
@@ -29,7 +28,7 @@ class MyColleaguesTableCell: UITableViewCell {
 		avatar.layer.borderWidth = 1.0
 		avatar.layer.cornerRadius = 4.0
 		avatar.layer.masksToBounds = true
-		avatar.layer.borderColor = UIColor.yellow.mixed(withColor: DynamicColor.red).cgColor
+		avatar.layer.borderColor = UIColor.impriseColor.cgColor
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -42,6 +41,7 @@ class MyColleaguesTableCell: UITableViewCell {
 		self.model = model
 		userName.text = model?.user.name
 		lastFeedback.attributedText = model?.lastGivenFeedback
+		avatar.image = UIImage(named: "user_placeholder")
 		
 		guard let avatarPath = model?.user.avatar else {
 			return

@@ -29,19 +29,8 @@ class ImpriseChellangeTests: XCTestCase {
 		components.setValue(-seconds, for: Calendar.Component.second)
 		let expectedString = NSLocalizedString("Just now", comment: "Just now format")
 		if let newDate = Calendar.current.date(byAdding: components, to: date) {
-			XCTAssertEqual(newDate.timeFromNow, expectedString)
+			XCTAssertEqual(newDate.timeDifference.stringValue(), expectedString)
 		}
-	
-//		let yearsFormat = NSLocalizedString("%d years ago", comment: "Number of years ago")
-//		String(format: yearsFormat, years)
-//
-//		
-//
-//		NSLocalizedString("You haven't given a feedback yet", comment: "Feedback not given placeholder")
-//		
-//		
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
 	
 	func testMinutesAgoString() {
@@ -55,7 +44,7 @@ class ImpriseChellangeTests: XCTestCase {
 		let expectedString = String(format: minutesFormat, minutes)
 		
 		if let newDate = Calendar.current.date(byAdding: components, to: date) {
-			XCTAssertEqual(newDate.timeFromNow, expectedString)
+			XCTAssertEqual(newDate.timeDifference.stringValue(), expectedString)
 		}
 	}
 	
@@ -70,7 +59,7 @@ class ImpriseChellangeTests: XCTestCase {
 		let expectedString = String(format: hoursFormat, hours)
 		
 		if let newDate = Calendar.current.date(byAdding: components, to: date) {
-			XCTAssertEqual(newDate.timeFromNow, expectedString)
+			XCTAssertEqual(newDate.timeDifference.stringValue(), expectedString)
 		}
 	}
 	
@@ -85,7 +74,7 @@ class ImpriseChellangeTests: XCTestCase {
 		let expectedString = String(format: daysFormat, days)
 		
 		if let newDate = Calendar.current.date(byAdding: components, to: date) {
-			XCTAssertEqual(newDate.timeFromNow, expectedString)
+			XCTAssertEqual(newDate.timeDifference.stringValue(), expectedString)
 		}
 	}
 	
@@ -100,7 +89,7 @@ class ImpriseChellangeTests: XCTestCase {
 		let expectedString = String(format: monthFormat, month)
 		
 		if let newDate = Calendar.current.date(byAdding: components, to: date) {
-			XCTAssertEqual(newDate.timeFromNow, expectedString)
+			XCTAssertEqual(newDate.timeDifference.stringValue(), expectedString)
 		}
 	}
 	
@@ -115,7 +104,7 @@ class ImpriseChellangeTests: XCTestCase {
 		let expectedString = String(format: yearsFormat, years)
 		
 		if let newDate = Calendar.current.date(byAdding: components, to: date) {
-			XCTAssertEqual(newDate.timeFromNow, expectedString)
+			XCTAssertEqual(newDate.timeDifference.stringValue(), expectedString)
 		}
 	}
 	
@@ -133,7 +122,7 @@ class ImpriseChellangeTests: XCTestCase {
 		let expectedString = String(format: yearsFormat, years)
 		
 		if let newDate = Calendar.current.date(byAdding: components, to: date) {
-			XCTAssertEqual(newDate.timeFromNow, expectedString)
+			XCTAssertEqual(newDate.timeDifference.stringValue(), expectedString)
 		}
 	}
 	
@@ -142,10 +131,10 @@ class ImpriseChellangeTests: XCTestCase {
 		class TestDataStorage: DataStorage {
 			override var users: [User] {
 				get {
-					var user1 = User(id: 0, name: "User1 Name1", email: "email1", avatar: "avatar1")
+					let user1 = User(id: 0, name: "User1 Name1", email: "email1", avatar: "avatar1")
 					user1.lastInteractions = [Date()]
 					
-					var user2 = User(id: 1, name: "User2 Name2", email: "email2", avatar: "avatar2")
+					let user2 = User(id: 1, name: "User2 Name2", email: "email2", avatar: "avatar2")
 					user2.lastInteractions = [Date().date(byAdding: DateComponents(day: -24))!]
 					
 					return [user1, user2]

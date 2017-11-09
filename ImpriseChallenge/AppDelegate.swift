@@ -36,6 +36,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 			NSAttributedStringKey.foregroundColor: UIColor.white,
 			NSAttributedStringKey.font: UIFont(name: "HelveticaNeue-Medium", size: titleFontSize) ?? UIFont.systemFont(ofSize: titleFontSize)
 		]
+		
+		UIApplication.shared.statusBarStyle = .lightContent
 	}
 }
 
